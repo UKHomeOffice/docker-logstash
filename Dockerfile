@@ -1,4 +1,4 @@
-FROM logstash:7.10.1
+FROM opensearchproject/logstash-oss-with-opensearch-output-plugin:7.13.4
 
 RUN logstash-plugin install --version 0.3.1 logstash-filter-kubernetes && \
     logstash-plugin install --version 4.1.17 logstash-input-file && \
