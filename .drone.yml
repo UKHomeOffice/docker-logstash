@@ -26,7 +26,7 @@ steps:
   environment:
     DOCKER_USERNAME: ukhomeofficedigital+opensearch_logstash
     DOCKER_PASSWORD:
-      from_secret: DOCKER_PASSWORD
+      from_secret: DOCKER_OPENSEARCH_PASSWORD
   when:
     event:
     - tag
