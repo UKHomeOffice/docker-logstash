@@ -1,4 +1,4 @@
-FROM logstash:7.10.1
+FROM logstash:7.16.2
 
 RUN logstash-plugin install --version 0.3.1 logstash-filter-kubernetes && \
     logstash-plugin install --version 4.1.17 logstash-input-file && \
