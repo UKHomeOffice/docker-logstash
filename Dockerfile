@@ -1,4 +1,4 @@
-FROM opensearchproject/logstash-oss-with-opensearch-output-plugin:8.4.0
+FROM opensearchproject/logstash-oss-with-opensearch-output-plugin:7.16.3
 
 RUN logstash-plugin install --version 3.0.3 logstash-filter-json_encode
 RUN logstash-plugin install --version 2.1.2 logstash-input-kinesis
