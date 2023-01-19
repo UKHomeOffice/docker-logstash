@@ -1,12 +1,7 @@
-FROM logstash:8.6.0
+FROM opensearchproject/logstash-oss-with-opensearch-output-plugin:8.4.0
 
-RUN logstash-plugin install --version 0.3.1 logstash-filter-kubernetes && \
-    logstash-plugin install --version 4.1.17 logstash-input-file && \
-    logstash-plugin install --version 3.0.3 logstash-filter-json_encode && \
-    logstash-plugin install --version 3.1.4 logstash-output-exec && \
-    logstash-plugin install --version 2.1.2 logstash-input-kinesis && \
-    logstash-plugin install --version 3.2.1 logstash-filter-fingerprint && \
-    logstash-plugin install --version 2.0.0 logstash-output-opensearch
+RUN logstash-plugin install --version 3.0.3 logstash-filter-json_encode
+RUN logstash-plugin install --version 2.1.2 logstash-input-kinesis
 
 
 USER root
