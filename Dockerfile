@@ -1,4 +1,4 @@
-FROM logstash:8.4.0
+FROM logstash:8.6.0
 
 RUN logstash-plugin install --version 3.0.3 logstash-filter-json_encode
 RUN logstash-plugin install --version 3.1.4 logstash-output-exec
