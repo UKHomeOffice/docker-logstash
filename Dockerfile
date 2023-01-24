@@ -1,9 +1,12 @@
 FROM logstash:8.4.0
 
-RUN logstash-plugin install --version 2.2.1 logstash-input-kinesis
-RUN logstash-plugin install --version 2.0.0 logstash-output-opensearch
-RUN logstash-plugin install --version 3.0.3 logstash-filter-json_encode
-RUN logstash-plugin install --version 3.1.4 logstash-output-exec
+RUN logstash-plugin install --version 0.3.1 logstash-filter-kubernetes && \
+    logstash-plugin install --version 4.1.17 logstash-input-file && \
+    logstash-plugin install --version 3.0.3 logstash-filter-json_encode && \
+    logstash-plugin install --version 3.1.4 logstash-output-exec && \
+    logstash-plugin install --version 2.2.1 logstash-input-kinesis && \
+    logstash-plugin install --version 3.2.1 logstash-filter-fingerprint && \
+    logstash-plugin install --version 2.0.0 logstash-output-opensearch
 
 
 USER root
