@@ -23,7 +23,7 @@ steps:
   depends_on:
     - build-image
   environment:
-    IMAGE_NAME: logstash:$${DRONE_COMMIT_SHA}
+    IMAGE_NAME: logstash:${DRONE_COMMIT_SHA}
   when:
     event: push
 
