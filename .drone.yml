@@ -24,6 +24,7 @@ steps:
     - build-image
   environment:
     IMAGE_NAME: logstash:${DRONE_COMMIT_SHA}
+    WHITELIST_FILE: cve-exceptions.txt
   when:
     event: push
 
